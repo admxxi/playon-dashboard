@@ -1,0 +1,144 @@
+.dashboard {
+    .linebottom{
+        border-bottom: 1px solid $lightGrey;   
+    }
+    .small{
+        font-size: 16px; 
+    }
+    .medium{
+        font-size: 17px;   
+    }
+    .cell-title{
+        font-size: 18px;
+        font-weight: bold;
+    }
+    .money{
+        font-size: 18px;
+        display: block;
+    }
+    .plus{
+        display: block;
+        margin: auto;
+        @include non-retina('../images/plus','.png',39px,39px);
+    }
+    .shirt{
+        display: block;
+        margin: auto;
+        @include non-retina('../images/shirt','.png',39px,35px);
+    }
+    .mail{
+        display: block;
+        margin: auto;
+        @include non-retina('../images/envelope','.png',30px,40px);
+
+    }
+    main {
+        position: relative;
+        height: 100%;
+        
+        z-index: 0;
+        width: 100%;
+        padding-top: 110px;
+        box-sizing: border-box;
+        display: block;
+        min-height: $main-minimum-height;
+        section {
+            z-index: 1;
+            top: 110px;
+            background-color: green;
+            height: 100%;
+            width: 100%;
+            
+            .table {
+                position: relative;
+                height: 100%;
+                width: 100%;
+                background-color: purple;
+                opacity: 0.8;
+                display: table;
+                border-collapse: separate;
+                border-spacing: 30px 30px;
+                @include bg-gradient();
+                
+                .cell {
+                    background-color: rgba(0,0,0,0.92);
+                    width: 50%;
+                    min-width: 120px;
+                    vertical-align: middle;
+                    text-align: center;
+                    overflow: hidden;
+                    &:nth-child(1n) {}
+                    &:nth-child(2n) {}
+                    
+                    .wrapper{  
+                        position: relative;
+                        width: 100%;
+                        height: auto;
+                        
+                        @include clearfix;
+                        
+                    > span{
+                        
+                        height: auto;
+                        font-weight: bold;
+                        display: block;
+                        text-transform:uppercase;
+                        margin: auto;
+                        
+                    }
+                    .box{
+                        
+                        margin: auto;
+                        display: inline-block;
+                        width: auto;
+                        margin-top: 10px;
+                       
+                        
+                        padding: 10px;
+                        border: 1px solid white;
+                        
+                        
+                        text-align: center;
+                        line-height: 20px;
+                    }
+                    }
+                }
+            }
+        }
+    }
+    @media #{$tablet} {
+        main {
+            section {
+                .table {
+                    border-spacing: 25px 25px;
+                }
+            }
+        }
+    }
+    @media #{$mobile} {
+        .small{
+            font-size: 13px; 
+        }
+        .medium{
+            font-size: 14px;   
+        }
+        .money{
+            font-size: 15px;
+        }
+        main {
+            section {
+                .table {
+                    border-spacing: 15px 15px;
+                    .cell {
+                        .wrapper{
+                            > span{
+                                font-size: 13px;
+                                font-weight: bold;   
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

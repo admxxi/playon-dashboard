@@ -1,0 +1,52 @@
+/* Media queries */
+
+$minimal: "only screen and (max-width : 320px)";
+$mobile: "only screen and (max-width : 460px)";
+$tablet: "only screen and (max-width : 760px)";
+$desktop: "only screen and (max-width : 960px)";
+
+.mobile {   display: none; }
+.tablet {   display: none; }
+.desktop{   display: block; }
+.desktop-table{   display: table; }
+
+@media #{$tablet} {
+    
+    .mobile, .mobile-table {   display: none; }
+    .desktop, .desktop-table {   display: none; }  
+    .tablet {   display: block; }
+    .tablet-table {   display: table; }
+    
+}
+@media #{$mobile} {
+   
+    .tablet, .tablet-table {   display: none; }
+    .desktop, .desktop-table {   display: none; }
+    .mobile {   display: block; }
+    .mobile-table {   display: table; }
+    
+}
+// Basic Grid
+
+
+/* Susy Disabled
+$susy: (
+  columns: 12,
+    
+  grid-padding: 10px,
+  gutter-position: inside,
+  global-box-sizing: content-box,
+);
+
+.container {
+   //@include container();
+   //@include clearfix;
+}
+
+/* Variables */
+
+$main-minimum-height: 640px;
+$lightGrey: #86878b;
+$primaryFont: Tahoma, Verdana, Segoe, sans-serif;
+//$secondaryFont: 'xxx';
+
